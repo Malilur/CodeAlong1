@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+<div id="div"></div>
+    
+<div id="buttons">
+    <button onclick="setWord(this.innerHTML)">Hei</button>
+    <button onclick="setWord(this.innerHTML)">På</button>
+    <button onclick="setWord(this.innerHTML)">Deg</button>
+    <button onclick="setWord(this.innerHTML)">Nei</button>
+    <button onclick="restart()">Reset</button>
+</div>
+
+    <input onchange="newWord(this.value)">
+<script>
+
+function setWord(chosenWord){
+document.getElementById('div').innerHTML += chosenWord + " ";
+}
+
+function restart(){
+document.getElementById('div').innerHTML = "";
+}
+
+function newWord(word){
+    document.getElementById('buttons').innerHTML+= `
+    <button onclick="setWord('${word}')">${word}</button>
+    `
+}
+
+
+</script>
+
+</body>
+</html>
